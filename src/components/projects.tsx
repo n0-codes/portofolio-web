@@ -34,9 +34,8 @@ const projects: Project[] = [
     details: [
       "Leveraged GPS trajectory analysis and speed pattern recognition",
       "Feature engineering from 50+ temporal and spatial variables",
-      "Built end-to-end data pipeline processing GPS coordinates",
-      "Implemented sequential node mapping algorithms with 40-meter radius accuracy",
-    ],
+      "Built end-to-end data pipeline processing GPS coordinates, implementing sequential node mapping algorithms and dwell time detection using state machines to analyze yellow bus movement and halting events on campus routes",
+      ],
     technologies: ["Python", "CatBoost", "GPS Analysis", "Machine Learning", "Data Pipeline"],
     link: "https://github.com/Vincent-Davis/RTA-Prediction",
     color: "from-blue-400 to-cyan-400",
@@ -49,10 +48,8 @@ const projects: Project[] = [
     description:
       "Developed LegalLink, a full-stack AI-powered legal assistant web application using Django, LangChain, and Google Gemini 2.0 Flash.",
     details: [
-      "Implemented RAG (Retrieval-Augmented Generation) to process 8+ Indonesian legal documents",
-      "Built intelligent document processing system using FAISS vector database",
-      "Automated PDF analysis and legal risk assessment",
-      "Structured JSON responses through RESTful APIs",
+      "Developed LegalLink, a full-stack AI-powered legal assistant web application using Django, LangChain, and Google Gemini 2.0 Flash, implementing RAG (Retrieval-Augmented Generation) to process 8+ Indonesian legal documents and provide chat-bot, document analysis, and business compliance checklist generation.",
+      "Built intelligent document processing system using FAISS vector database and Google GenerativeAI Embeddings, enabling automated PDF analysis, legal risk assessment, and structured JSON responses through RESTful APIs",
     ],
     technologies: ["Django", "LangChain", "Google Gemini", "RAG", "FAISS", "REST API"],
     link: "https://github.com/Vincent-Davis/Law-Chatbot",
@@ -65,11 +62,10 @@ const projects: Project[] = [
     description:
       "Developed booking management system for kost rental platform using Spring Boot and Java with asynchronous processing capabilities.",
     details: [
-      "Implemented CompletableFuture and @Async annotations for concurrent booking requests",
-      "Built end-to-end booking workflow with REST APIs",
-      "State management for booking lifecycle (PENDING → PAID → APPROVED → ACTIVE → INACTIVE)",
-      "Strategy design pattern for flexible kost search functionality",
-      "Comprehensive unit testing suite using JUnit and Mockito",
+      "Developed booking management system for kost rental platform using Spring Boot and Java, implementing asynchronous processing with CompletableFuture and @Async annotations to handle concurrent booking requests and automated state transitions.",
+      "Built end-to-end booking workflow with REST APIs and state management for booking lifecycle (PENDING → PAID → APPROVED → ACTIVE → INACTIVE), integrating scheduled tasks for automatic status updates and payment processing with transaction service.",
+      "Implemented Strategy design pattern for flexible kost search functionality, enabling multiple search criteria and filtering options for enhanced user experience.",
+      "Created a comprehensive unit testing suite using JUnit and Mockito to ensure system reliability, maintainability, and proper validation of booking workflows and business logic.",
     ],
     technologies: ["Spring Boot", "Java", "REST API", "JUnit", "Mockito", "PostgreSQL"],
     link: "https://github.com/Papikos-a15/papikos-be",

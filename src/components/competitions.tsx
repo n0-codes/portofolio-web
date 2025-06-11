@@ -37,7 +37,7 @@ const competitions = [
     date: "Jan 2025",
     position: "Finalist (5th Place out of 222 teams)",
     description:
-      "Developed a real-time, camera-based computer vision system for safety-focused fall detection by integrating ResNet152 for classification and YOLO-enhanced bounding boxes.",
+      "Developed a real-time, camera-based computer vision system for safety-focused fall detection by integrating ResNet152 for classification and YOLO-enhanced bounding boxes for precise localization",
     achievements: [
       "Achieved 98.2% accuracy",
       "Built fully functional demo simulating fall scenarios",
@@ -54,9 +54,8 @@ const competitions = [
     description:
       "Built a CV pipeline for cloth type and color detection using ResNet152, achieving a top 2 ranking on Kaggle's private leaderboard.",
     achievements: [
-      "Top 2 ranking on Kaggle's private leaderboard",
-      "Developed unsupervised shopping recommendation system using BERTopic",
-      "Implemented topic modeling to cluster transactions",
+      "Top 2 ranking on Kaggle's private leaderboard during the competition phase",
+      "Developed an unsupervised shopping recommendation system using BERTopic topic modeling to cluster transactions and interpret product text descriptions.",
     ],
     color: "from-purple-400 to-pink-400",
     logo: brawijayaLogo, // Tambahkan logo
@@ -70,8 +69,8 @@ const competitions = [
       "Developed a comprehensive data validation system for 1,336 employee health records with automated anomaly detection.",
     achievements: [
       "Perfect score submission",
-      "Implemented geospatial analysis using GeoPy",
-      "Built predictive model achieving NMSE score of 0.722",
+      "Developed a comprehensive data validation system for 1,336 employee health records with automated anomaly detection for medical parameters (blood pressure, BMI, glucose, triglycerides), implemented geospatial analysis using GeoPy for birthplace standardization",
+      "Built predictive model for total cholesterol levels using CatBoost with Optuna hyperparameter optimization), achieving NMSE score of 0.722 through advanced feature selection, categorical feature handling, and cross-validation techniques for regression modeling on healthcare data.",
     ],
     color: "from-green-400 to-teal-400",
     logo: itbLogo, // Tambahkan logo

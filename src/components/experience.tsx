@@ -19,7 +19,7 @@ const experiences = [
     type: "Leadership",
     description: "Leading the design and implementation of a structured data science academy program.",
     achievements: [
-      "Designed and implemented a structured, three-part data science academy program spanning 10 courses over three weeks, covering key topics including data cleaning, feature engineering, machine learning, deep learning, and data storytelling",
+      "Designed and implemented a structured, three-part data science academy program spanning 10 courses over three weeks, covering key topics including data cleaning, feature engineering, machine learning, deep learning, and data storytelling.",
       "Successfully established strategic partnerships with Pusilkom UI and Data Science Indonesia, resulting in the recruitment of 3 expert speakers, 2 mentors, and 1 judge to support lectures, hands-on sessions, and project evaluations.",
       "Coordinated program staffing, with internal teams to secure 10 speakers, 10 mentors, and 3 judges to deliver lectures and final project reviews."
     ],
@@ -34,7 +34,7 @@ const experiences = [
     type: "Organization",
     description: "Active member of RISTEK UI's Data Science & AI Special Interest Group.",
     achievements: [
-      'Received "Best Growth" award for outstanding contribution to the SIG',
+      'Received “Best Growth” award for RISTEK UI’s Data Science & AI Special Interest Group, recognizing leadership in member recruitment, program development, and community engagement',
       "Mentored teams at SISTECH event, providing technical guidance in AI and data science",
       "Participated in 8 internal classes covering advanced data science and AI topics including Natural Language Processing (NLP), Large Language Models (LLM), Reinforcement Learning (RL), and Computer Vision (CV)",
       "Engaged in weekly research discussions and data challenge reviews for over 3 months, sharpening practical skills in model evaluation, optimization, and real-world AI applications.",
