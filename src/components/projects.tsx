@@ -4,9 +4,28 @@ import { motion } from "framer-motion"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { Code, Calendar, Github } from "lucide-react"
+import { Code, Calendar, Github, Bus } from "lucide-react"
+import Image from "next/image"
+import { LucideIcon } from "lucide-react"
+import { StaticImageData } from "next/image"
 
-const projects = [
+import lawLogo from "@/assets/images/projects/law-logo.png"
+import papikosLogo from "@/assets/images/projects/papikos-logo.png"
+
+interface Project {
+  title: string
+  date: string
+  description: string
+  details: string[]
+  technologies: string[]
+  link: string
+  color: string
+  icon?: LucideIcon
+  iconColor?: string
+  logo?: StaticImageData
+}
+
+const projects: Project[] = [
   {
     title: "Yellow Bus RTA Prediction",
     date: "March 2025",
@@ -21,6 +40,8 @@ const projects = [
     technologies: ["Python", "CatBoost", "GPS Analysis", "Machine Learning", "Data Pipeline"],
     link: "https://github.com/Vincent-Davis/RTA-Prediction",
     color: "from-blue-400 to-cyan-400",
+    icon: Bus,
+    iconColor: "text-yellow-400",
   },
   {
     title: "Indonesian Law Chatbot",
@@ -36,6 +57,7 @@ const projects = [
     technologies: ["Django", "LangChain", "Google Gemini", "RAG", "FAISS", "REST API"],
     link: "https://github.com/Vincent-Davis/Law-Chatbot",
     color: "from-purple-400 to-pink-400",
+    logo: lawLogo,
   },
   {
     title: "Papikos - Kost Rental Platform",
@@ -52,6 +74,7 @@ const projects = [
     technologies: ["Spring Boot", "Java", "REST API", "JUnit", "Mockito", "PostgreSQL"],
     link: "https://github.com/Papikos-a15/papikos-be",
     color: "from-green-400 to-teal-400",
+    logo: papikosLogo,
   },
 ]
 
@@ -84,8 +107,23 @@ export function Projects() {
               <Card className="bg-gray-900/50 border-gray-800 hover:border-gray-700 transition-colors">
                 <CardHeader>
                   <div className="flex items-start justify-between flex-wrap gap-4">
-                    <div className="flex items-center gap-3">
-                      <Code className={`w-8 h-8 bg-gradient-to-r ${project.color} bg-clip-text text-transparent`} />
+                    <div className="flex items-center gap-4">
+                      {/* Logo/Icon kotak */}
+                      <div className="w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center border border-gray-700 overflow-hidden">
+                        {project.icon ? (
+                          <project.icon className={`w-6 h-6 ${project.iconColor}`} />
+                        ) : project.logo ? (
+                          <Image
+                            src={project.logo}
+                            alt={`${project.title} logo`}
+                            width={48}
+                            height={48}
+                            className="object-contain w-full h-full"
+                          />
+                        ) : (
+                          <Code className={`w-6 h-6 bg-gradient-to-r ${project.color} bg-clip-text text-transparent`} />
+                        )}
+                      </div>
                       <div>
                         <CardTitle className="text-xl text-white">{project.title}</CardTitle>
                         <div className="flex items-center gap-2 text-gray-400 mt-1">
@@ -123,9 +161,11 @@ export function Projects() {
                     </div>
                   </div>
 
-                  <Button variant="outline" size="sm" className="bg-gray-800 border-gray-700 hover:bg-gray-700">
-                    <Github className="w-4 h-4 mr-2" />
-                    View on GitHub
+                  <Button variant="outline" size="sm" className="bg-gray-800 border-gray-700 hover:bg-gray-700" asChild>
+                    <a href={project.link} target="_blank" rel="noopener noreferrer">
+                      <Github className="w-4 h-4 mr-2" />
+                      View on GitHub
+                    </a>
                   </Button>
                 </CardContent>
               </Card>
