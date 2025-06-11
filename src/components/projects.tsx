@@ -1,0 +1,138 @@
+"use client"
+
+import { motion } from "framer-motion"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
+import { Code, Calendar, Github } from "lucide-react"
+
+const projects = [
+  {
+    title: "Yellow Bus RTA Prediction",
+    date: "March 2025",
+    description:
+      "Developed a CatBoost-based machine learning model to predict real-time arrival times of Universitas Indonesia's yellow bus, achieving an RMSLE of 1.01.",
+    details: [
+      "Leveraged GPS trajectory analysis and speed pattern recognition",
+      "Feature engineering from 50+ temporal and spatial variables",
+      "Built end-to-end data pipeline processing GPS coordinates",
+      "Implemented sequential node mapping algorithms with 40-meter radius accuracy",
+    ],
+    technologies: ["Python", "CatBoost", "GPS Analysis", "Machine Learning", "Data Pipeline"],
+    link: "https://github.com/Vincent-Davis/RTA-Prediction",
+    color: "from-blue-400 to-cyan-400",
+  },
+  {
+    title: "Indonesian Law Chatbot",
+    date: "Jan 2025",
+    description:
+      "Developed LegalLink, a full-stack AI-powered legal assistant web application using Django, LangChain, and Google Gemini 2.0 Flash.",
+    details: [
+      "Implemented RAG (Retrieval-Augmented Generation) to process 8+ Indonesian legal documents",
+      "Built intelligent document processing system using FAISS vector database",
+      "Automated PDF analysis and legal risk assessment",
+      "Structured JSON responses through RESTful APIs",
+    ],
+    technologies: ["Django", "LangChain", "Google Gemini", "RAG", "FAISS", "REST API"],
+    link: "https://github.com/Vincent-Davis/Law-Chatbot",
+    color: "from-purple-400 to-pink-400",
+  },
+  {
+    title: "Papikos - Kost Rental Platform",
+    date: "Jun 2025",
+    description:
+      "Developed booking management system for kost rental platform using Spring Boot and Java with asynchronous processing capabilities.",
+    details: [
+      "Implemented CompletableFuture and @Async annotations for concurrent booking requests",
+      "Built end-to-end booking workflow with REST APIs",
+      "State management for booking lifecycle (PENDING → PAID → APPROVED → ACTIVE → INACTIVE)",
+      "Strategy design pattern for flexible kost search functionality",
+      "Comprehensive unit testing suite using JUnit and Mockito",
+    ],
+    technologies: ["Spring Boot", "Java", "REST API", "JUnit", "Mockito", "PostgreSQL"],
+    link: "https://github.com/Papikos-a15/papikos-be",
+    color: "from-green-400 to-teal-400",
+  },
+]
+
+export function Projects() {
+  return (
+    <section id="projects" className="py-20 px-4 bg-gray-900/30">
+      <div className="max-w-6xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+            Personal Projects
+          </h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-purple-400 mx-auto"></div>
+        </motion.div>
+
+        <div className="grid gap-8">
+          {projects.map((project, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: index * 0.1 }}
+              viewport={{ once: true }}
+            >
+              <Card className="bg-gray-900/50 border-gray-800 hover:border-gray-700 transition-colors">
+                <CardHeader>
+                  <div className="flex items-start justify-between flex-wrap gap-4">
+                    <div className="flex items-center gap-3">
+                      <Code className={`w-8 h-8 bg-gradient-to-r ${project.color} bg-clip-text text-transparent`} />
+                      <div>
+                        <CardTitle className="text-xl text-white">{project.title}</CardTitle>
+                        <div className="flex items-center gap-2 text-gray-400 mt-1">
+                          <Calendar className="w-4 h-4" />
+                          <span>{project.date}</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </CardHeader>
+
+                <CardContent>
+                  <p className="text-gray-300 mb-4">{project.description}</p>
+
+                  <div className="mb-4">
+                    <h4 className="text-sm font-semibold text-white mb-2">Key Features:</h4>
+                    <ul className="space-y-1">
+                      {project.details.map((detail, i) => (
+                        <li key={i} className="text-gray-400 text-sm flex items-start gap-2">
+                          <span className="text-blue-400 mt-1">•</span>
+                          {detail}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div className="mb-4">
+                    <h4 className="text-sm font-semibold text-white mb-2">Technologies:</h4>
+                    <div className="flex flex-wrap gap-2">
+                      {project.technologies.map((tech) => (
+                        <Badge key={tech} variant="outline" className="border-gray-700 text-gray-300">
+                          {tech}
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>
+
+                  <Button variant="outline" size="sm" className="bg-gray-800 border-gray-700 hover:bg-gray-700">
+                    <Github className="w-4 h-4 mr-2" />
+                    View on GitHub
+                  </Button>
+                </CardContent>
+              </Card>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
