@@ -28,7 +28,7 @@ export function About() {
         >
           <Card className="bg-gray-900/50 border-gray-800">
             <CardContent className="p-8">
-              <p className="text-lg text-gray-300 leading-relaxed mb-6">
+              <p className="text-lg text-gray-300 leading-relaxed mb-6 text-center">
                 Second-year CS student at Universitas Indonesia (GPA: 3.97/4.00). Passionate in building deployable AI systems. Highly Interested in NLP, CV, and RAG architecture, with hands-on experience in developing ML pipelines and optimizing model performance.
               </p>
             </CardContent>

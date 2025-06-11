@@ -60,21 +60,25 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 0.8 }}
           className="flex justify-center gap-4"
         >
-          <Button variant="outline" size="lg" className="bg-gray-800 border-gray-700 hover:bg-gray-700">
-            <Github className="w-5 h-5 mr-2" />
-            GitHub
+          <Button variant="outline" size="lg" className="bg-gray-800 border-gray-700 hover:bg-gray-700" asChild>
+            <a href="https://github.com/Vincent-Davis" target="_blank" rel="noopener noreferrer">
+              <Github className="w-5 h-5 mr-2" />
+              GitHub
+            </a>
           </Button>
-          <Button variant="outline" size="lg" className="bg-gray-800 border-gray-700 hover:bg-gray-700">
-            <Linkedin className="w-5 h-5 mr-2" />
-            LinkedIn
+          <Button variant="outline" size="lg" className="bg-gray-800 border-gray-700 hover:bg-gray-700" asChild>
+            <a href="https://www.linkedin.com/in/vincent-davis-bb678828a/" target="_blank" rel="noopener noreferrer">
+              <Linkedin className="w-5 h-5 mr-2" />
+              LinkedIn
+            </a>
           </Button>
-          <Button
+          {/* <Button
             size="lg"
             className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700"
           >
             <Mail className="w-5 h-5 mr-2" />
             Contact Me
-          </Button>
+          </Button> */}
         </motion.div>
       </motion.div>
     </section>

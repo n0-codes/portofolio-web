@@ -16,6 +16,7 @@ const experiences = [
     achievements: [
       "Designed and implemented a structured, three-part data science academy program spanning 10 courses over three weeks, covering key topics including data cleaning, feature engineering, machine learning, deep learning, and data storytelling",
       "Successfully established strategic partnerships with Pusilkom UI and Data Science Indonesia, resulting in the recruitment of 3 expert speakers, 2 mentors, and 1 judge to support lectures, hands-on sessions, and project evaluations.",
+      "Coordinated program staffing, with internal teams to secure 10 speakers, 10 mentors, and 3 judges to deliver lectures and final project reviews."
     ],
     color: "from-blue-400 to-cyan-400",
   },

@@ -5,6 +5,12 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Trophy, Calendar, ExternalLink, DollarSign } from "lucide-react"
+import Image from "next/image"
+
+import ipbLogo from "@/assets/images/competitions/ipb-logo.png"
+import telkomLogo from "@/assets/images/competitions/telkom-logo.png"
+import brawijayaLogo from "@/assets/images/competitions/brawijaya-logo.png"
+import itbLogo from "@/assets/images/competitions/itb-logo.png"
 
 const competitions = [
   {
@@ -23,6 +29,7 @@ const competitions = [
     ],
     link: "https://github.com/Vincent-Davis/refchecker",
     color: "from-yellow-400 to-orange-400",
+    logo: ipbLogo, // Tambahkan logo
   },
   {
     title: "Human Fall Detection System",
@@ -37,6 +44,7 @@ const competitions = [
       "Accurate detection across various lighting conditions and camera angles",
     ],
     color: "from-blue-400 to-cyan-400",
+    logo: telkomLogo, // Tambahkan logo
   },
   {
     title: "Clothing Classification & Topic Recommendation",
@@ -51,6 +59,7 @@ const competitions = [
       "Implemented topic modeling to cluster transactions",
     ],
     color: "from-purple-400 to-pink-400",
+    logo: brawijayaLogo, // Tambahkan logo
   },
   {
     title: "Employee Health Analytics",
@@ -65,6 +74,7 @@ const competitions = [
       "Built predictive model achieving NMSE score of 0.722",
     ],
     color: "from-green-400 to-teal-400",
+    logo: itbLogo, // Tambahkan logo
   },
 ]
 
@@ -97,8 +107,21 @@ export function Competitions() {
               <Card className="bg-gray-900/50 border-gray-800 hover:border-gray-700 transition-colors">
                 <CardHeader>
                   <div className="flex items-start justify-between flex-wrap gap-4">
-                    <div className="flex items-center gap-3">
-                      <Trophy className={`w-8 h-8 bg-gradient-to-r ${comp.color} bg-clip-text text-transparent`} />
+                    <div className="flex items-center gap-4">
+                      {/* Logo kotak */}
+                      <div className="w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center p-2 border border-gray-700">
+                        {comp.logo ? (
+                          <Image
+                            src={comp.logo}
+                            alt={`${comp.event} logo`}
+                            width={32}
+                            height={32}
+                            className="object-contain"
+                          />
+                        ) : (
+                          <Trophy className={`w-6 h-6 bg-gradient-to-r ${comp.color} bg-clip-text text-transparent`} />
+                        )}
+                      </div>
                       <div>
                         <CardTitle className="text-xl text-white">{comp.title}</CardTitle>
                         <p className="text-gray-400">{comp.event}</p>
@@ -144,9 +167,11 @@ export function Competitions() {
                   </div>
 
                   {comp.link && (
-                    <Button variant="outline" size="sm" className="bg-gray-800 border-gray-700 hover:bg-gray-700">
-                      <ExternalLink className="w-4 h-4 mr-2" />
-                      View Project
+                    <Button variant="outline" size="sm" className="bg-gray-800 border-gray-700 hover:bg-gray-700" asChild>
+                      <a href={comp.link} target="_blank" rel="noopener noreferrer">
+                        <ExternalLink className="w-4 h-4 mr-2" />
+                        View Project
+                      </a>
                     </Button>
                   )}
                 </CardContent>
