@@ -4,6 +4,11 @@ import { motion } from "framer-motion"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Briefcase, Calendar } from "lucide-react"
+import Image from "next/image"
+
+// Import logo files
+import compfestLogo from "@/assets/images/activities/compfest17.png"
+import ristekLogo from "@/assets/images/activities/ristek.png"
 
 const experiences = [
   {
@@ -19,6 +24,7 @@ const experiences = [
       "Coordinated program staffing, with internal teams to secure 10 speakers, 10 mentors, and 3 judges to deliver lectures and final project reviews."
     ],
     color: "from-blue-400 to-cyan-400",
+    logo: compfestLogo,
   },
   {
     title: "Member",
@@ -34,6 +40,7 @@ const experiences = [
       "Engaged in weekly research discussions and data challenge reviews for over 3 months, sharpening practical skills in model evaluation, optimization, and real-world AI applications.",
     ],
     color: "from-purple-400 to-pink-400",
+    logo: ristekLogo,
   },
 ]
 
@@ -66,8 +73,21 @@ export function Experience() {
               <Card className="bg-gray-900/50 border-gray-800 hover:border-gray-700 transition-colors">
                 <CardHeader>
                   <div className="flex items-start justify-between flex-wrap gap-4">
-                    <div className="flex items-center gap-3">
-                      <Briefcase className={`w-8 h-8 bg-gradient-to-r ${exp.color} bg-clip-text text-transparent`} />
+                    <div className="flex items-center gap-4">
+                      {/* Logo kotak */}
+                      <div className="w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center border border-gray-700 overflow-hidden">
+                        {exp.logo ? (
+                          <Image
+                            src={exp.logo}
+                            alt={`${exp.organization} logo`}
+                            width={48}
+                            height={48}
+                            className="object-contain w-full h-full"
+                          />
+                        ) : (
+                          <Briefcase className={`w-6 h-6 bg-gradient-to-r ${exp.color} bg-clip-text text-transparent`} />
+                        )}
+                      </div>
                       <div>
                         <CardTitle className="text-xl text-white">{exp.title}</CardTitle>
                         <p className="text-lg text-blue-400 font-semibold">{exp.organization}</p>
