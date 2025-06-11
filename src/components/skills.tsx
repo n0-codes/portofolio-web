@@ -23,6 +23,7 @@ const skillCategories = [
       "Node.js",
     ],
     color: "from-blue-400 to-cyan-400",
+    iconColor: "text-blue-400",
   },
   {
     title: "Machine Learning & AI",
@@ -43,6 +44,7 @@ const skillCategories = [
       "BERT",
     ],
     color: "from-purple-400 to-pink-400",
+    iconColor: "text-purple-400",
   },
   {
     title: "Data Science & Analytics",
@@ -60,6 +62,7 @@ const skillCategories = [
       "Cross-validation",
     ],
     color: "from-green-400 to-teal-400",
+    iconColor: "text-green-400",
   },
   {
     title: "Tools & Technologies",
@@ -77,6 +80,7 @@ const skillCategories = [
       "Linux",
     ],
     color: "from-orange-400 to-red-400",
+    iconColor: "text-orange-400",
   },
 ]
 
@@ -120,10 +124,11 @@ export function Skills() {
             >
               <Card className="bg-gray-900/50 border-gray-800 h-full">
                 <CardHeader>
-                  <div className="flex items-center gap-3">
-                    <category.icon
-                      className={`w-6 h-6 bg-gradient-to-r ${category.color} bg-clip-text text-transparent`}
-                    />
+                  <div className="flex items-center gap-4">
+                    {/* Logo kotak untuk technical skills */}
+                    <div className="w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center p-2 border border-gray-700">
+                      <category.icon className={`w-6 h-6 ${category.iconColor}`} />
+                    </div>
                     <CardTitle className="text-lg text-white">{category.title}</CardTitle>
                   </div>
                 </CardHeader>
@@ -151,8 +156,11 @@ export function Skills() {
           >
             <Card className="bg-gray-900/50 border-gray-800">
               <CardHeader>
-                <div className="flex items-center gap-3">
-                  <Award className="w-6 h-6 text-yellow-400" />
+                <div className="flex items-center gap-4">
+                  {/* Logo kotak untuk certifications */}
+                  <div className="w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center p-2 border border-gray-700">
+                    <Award className="w-6 h-6 text-yellow-400" />
+                  </div>
                   <CardTitle className="text-lg text-white">Certifications & Training</CardTitle>
                 </div>
               </CardHeader>
@@ -177,8 +185,11 @@ export function Skills() {
           >
             <Card className="bg-gray-900/50 border-gray-800">
               <CardHeader>
-                <div className="flex items-center gap-3">
-                  <Languages className="w-6 h-6 text-green-400" />
+                <div className="flex items-center gap-4">
+                  {/* Logo kotak untuk languages */}
+                  <div className="w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center p-2 border border-gray-700">
+                    <Languages className="w-6 h-6 text-green-400" />
+                  </div>
                   <CardTitle className="text-lg text-white">Languages</CardTitle>
                 </div>
               </CardHeader>
