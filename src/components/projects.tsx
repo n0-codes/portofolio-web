@@ -32,7 +32,7 @@ const projects: Project[] = [
     description:
       "Developed a CatBoost-based machine learning model to predict real-time arrival times of Universitas Indonesia's yellow bus, achieving an RMSLE of 1.01.",
     details: [
-      "Leveraged GPS trajectory analysis and speed pattern recognition",
+      "Developed a CatBoost-based machine learning model to predict real-time arrival times of Universitas Indonesia’s yellow bus, achieving an RMSLE of 1.01 by leveraging GPS trajectory analysis, speed pattern recognition, and feature engineering from 50+ temporal and spatial variables.",
       "Feature engineering from 50+ temporal and spatial variables",
       "Built end-to-end data pipeline processing GPS coordinates, implementing sequential node mapping algorithms and dwell time detection using state machines to analyze yellow bus movement and halting events on campus routes",
       ],
